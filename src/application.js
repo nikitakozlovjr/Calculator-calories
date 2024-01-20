@@ -1,3 +1,5 @@
+import buttonSwitch from "./buttonSwitch.js";
+
 const elementsWithListeners = {
     genders: Array.from(document.querySelectorAll('input[name="gender"]')),
     age: document.querySelector('input[name="age"]'),
@@ -7,24 +9,24 @@ const elementsWithListeners = {
 }
 
 const elementsForСalculation = {
-    gender: elementsWithListeners.genders.filter((input) => input.checked)[0],
+    gender: elementsWithListeners.genders.filter((input) => input.checked)[0].dataset.gender,
     age: elementsWithListeners.age.value,
     height: elementsWithListeners.height.value, 
     weight: elementsWithListeners.weight.value,
-    activity: elementsWithListeners.activities.filter((input) => input.checked)[0]
+    activity: elementsWithListeners.activities.filter((input) => input.checked)[0].dataset.active
 };
 
 //-----------------------------------Listeners--------------------------------------------------------------
 elementsWithListeners.genders.map((gender) => {
     gender.addEventListener('change', (event) => {
-        const newCheckEl = event.target;
+        const newCheckEl = event.target.dataset.gender;
         elementsForСalculation.gender = newCheckEl;
     });
 });
 
 elementsWithListeners.activities.map((activity) => {
     activity.addEventListener('change', (event) => {
-        const newCheckEl = event.target;
+        const newCheckEl = event.target.dataset.active;
         elementsForСalculation.activity = newCheckEl;
     });
 });
@@ -34,10 +36,10 @@ elementsWithListeners.activities.map((activity) => {
         const paramName = event.target.name;
         const value = event.target.value;
         elementsForСalculation[paramName] = Number(value);
+        buttonSwitch();
     })
 })
 //----------------------------------------------------------------------------------------------------------
-
 
 
 const info = document.querySelector('.info');
@@ -49,3 +51,5 @@ info.addEventListener('click', () => {
         weight: elementsForСalculation.weight
     })
 }) 
+
+export default elementsForСalculation;
