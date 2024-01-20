@@ -1,19 +1,23 @@
-const genderConfig = { // dispatch by key (gender data)
-  man: 5,
-  women: -161,
+import elements from './application.js';
+import {genderConfig, activityConfig} from './coefficients.js';
+
+const spanWithResult = {
+    normal: document.querySelector('.normal_cal'),
+    low: document.querySelector('.low_cal'),
+    more: document.querySelector('.more_cal')
 };
 
-const activityConfig = { // dispatch by key (active data)
-  min: 1.2,
-  low: 1.375,
-  average: 1.55,
-  high: 1.725,
-  huge: 1.9,
-};
+const infoBlock = document.querySelector('.info');
+const button = document.querySelector('.submit');
 
-let params = {}; // dispatch by key (param data)
+button.addEventListener('click', () => {
+    const normal = activityConfig[elements.activity] * ((10 * elements.weight) + (6.25 * elements.height) - (5 * elements.age) + genderConfig[elements.gender]);
+    const low = (0.85 * normal).toFixed(1);
+    const more = (1.15 * normal).toFixed(1);
 
-// --------------------------------- default Value --------------------------------------------------- 
-let genderCoefficient = genderConfig.man;
-let activityCoefficients = activityConfig.min;
-// ---------------------------------------------------------------------------------------------------
+    spanWithResult.normal.textContent = normal.toFixed(1);
+    spanWithResult.low.textContent = low;
+    spanWithResult.more.textContent = more;
+
+    infoBlock.style.display = 'block';
+})
