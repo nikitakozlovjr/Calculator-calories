@@ -8,9 +8,9 @@ const elementsWithListeners = {
 
 const elementsForСalculation = {
     gender: elementsWithListeners.genders.filter((input) => input.checked)[0],
-    age: elementsWithListeners.age,
-    height: elementsWithListeners.height, 
-    weight: elementsWithListeners.weight,
+    age: elementsWithListeners.age.value,
+    height: elementsWithListeners.height.value, 
+    weight: elementsWithListeners.weight.value,
     activity: elementsWithListeners.activities.filter((input) => input.checked)[0]
 };
 
@@ -28,9 +28,24 @@ elementsWithListeners.activities.map((activity) => {
         elementsForСalculation.activity = newCheckEl;
     });
 });
+
+[elementsWithListeners.age, elementsWithListeners.height, elementsWithListeners.weight].forEach((param) => {
+    param.addEventListener('input', (event) => {
+        const paramName = event.target.name;
+        const value = event.target.value;
+        elementsForСalculation[paramName] = Number(value);
+    })
+})
 //----------------------------------------------------------------------------------------------------------
+
+
 
 const info = document.querySelector('.info');
 info.addEventListener('click', () => {
     console.log(elementsForСalculation.activity);
+    console.log({
+        age: elementsForСalculation.age,
+        height: elementsForСalculation.height,
+        weight: elementsForСalculation.weight
+    })
 }) 
