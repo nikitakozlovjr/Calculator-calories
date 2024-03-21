@@ -1,28 +1,29 @@
 doctype html
 head
   meta(charset='UTF-8')
-  link(rel='stylesheet', href='css/style.css')
+  
   title Клевер здоровья - #{title}
-  script(defer='', type='module', src='./src/application.js')
-  script(defer='', type='module', src='./src/buttonSwitch.js')
-  script(defer='', type='module', src='./src/index.js')
+//-   style
+//-     include ../../css/style.css
 header.container-header
-  h2.logo-text T&vcy;&ocy;&iecy; &tcy;&iecy;&lcy;&ocy; - &ecy;&tcy;&ocy; &tcy;&vcy;&ocy;&jcy; &bcy;&icy;&zcy;&ncy;&iecy;&scy;&scy;!
-  a(href='#') &Vcy;&ocy;&jcy;&tcy;&icy;
-  a(href='#') &Zcy;&acy;&rcy;&gcy;&icy;&scy;&tcy;&rcy;&icy;&rcy;&ocy;&vcy;&acy;&tcy;&softcy;&scy;&yacy;
+  h2.logo-text Клевер здоровья
+  a(href='#') Войти
+  a(href='#') Зарегистрироваться
 main.main
   nav.nav
     ul
       li
-        a(href='#') &Gcy;&lcy;&acy;&vcy;&ncy;&acy;&yacy;
+        a(href='/') Главная
       li
-        a(href='#') &Scy;&chcy;&iecy;&tcy;&chcy;&icy;&kcy; &kcy;&acy;&lcy;&ocy;&rcy;&icy;&iecy;&vcy;
+        a(href='#') Советы врачей
       li
-        a(href='#') &Rcy;&acy;&scy;&chcy;&iecy;&tcy; &vcy;&ocy;&dcy;&yacy;&ncy;&ocy;&gcy;&ocy; &bcy;&acy;&lcy;&acy;&ncy;&scy;&acy;
+        a(href='/calories') Счетчик калориев
       li
-        a(href='#') &Scy;&chcy;&iecy;&tcy;&chcy;&icy;&kcy; &bcy;&iecy;&lcy;&kcy;&acy;
+        a(href='#') Расчет водяного баланса
       li
-        a(href='#') &Icy;&scy;&tcy;&ocy;&rcy;&icy;&yacy; &rcy;&acy;&scy;&chcy;&iecy;&tcy;&ocy;&vcy;
+        a(href='#') Счетчик белка
+      li
+        a(href='#') История расчетов
   block content
   footer
     a &Kcy;&ocy;&ncy;&tcy;&acy;&kcy;&tcy;&ycy;
