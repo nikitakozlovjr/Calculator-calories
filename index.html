@@ -4,9 +4,26 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/style.css">
   <title>Калькулятор калорий</title>
+  <script defer type="module" defer src="./src/application.js"></script>
+  <script defer type="module" defer src="./src/buttonSwitch.js"></script>
+  <script defer type="module" defer src="./src/index.js"></script>
 </head>
 <body class="page">
+  <header class="container-header">
+    <h2 class="logo-text">Tвое тело - это твой бизнесс!</h2>
+    <a href="#">Войти</a>
+    <a href="#">Заргистрироваться</a>
+  </header>
   <main class="main">
+    <nav class="nav">
+        <ul>
+            <li><a href="#">Главная</a></li>
+            <li><a href="#">Счетчик калориев</a></li>
+            <li><a href="#">Расчет водяного баланса</a></li>
+            <li><a href="#">Счетчик белка</a></li>
+            <li><a href="#">История расчетов</a></li>
+        </ul>
+    </nav>
     <article>
     <h1>
         Счётчик калорий
@@ -164,8 +181,10 @@
     </section>
     </article>
   </main>
-  <script type="module" defer src="./src/application.js"></script>
-  <script type="module" defer src="./src/buttonSwitch.js"></script>
-  <script type="module" defer src="./src/index.js"></script>
 </body>
+<footer>
+    <a>Контакты</a>
+    <a>Поддержка</a>
+    <a>О нас</a>
+</footer>
 </html>
