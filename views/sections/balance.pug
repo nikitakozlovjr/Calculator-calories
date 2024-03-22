@@ -1,0 +1,36 @@
+extends ../layout/app.pug
+
+block content 
+    article
+        h1 Расчет водяного баланса
+        form.formParam(name='counter', action='#', method='post')
+            h2 Пол
+            ul(data-name='gender')
+                li
+                    input(type='radio', name='gender', data-gender='man', checked='checked')
+                    label Мужчина
+                li
+                    input(type='radio', name='gender', data-gender='women')
+                    label Женщина
+            fieldset
+                legend Физические параметры
+                div
+                    label Возраст
+                    span лет
+                div
+                    input(name='age', type='text', placeholder='0')
+                div
+                    label Рост
+                    span см
+                div
+                    input(name='height', type='text', placeholder='0')
+                div
+                    label Вес
+                    span кг
+                div
+                    input(name='weight', type='text', placeholder='0')
+        button.submit(name='submit', type='submit', disabled='')
+            | &Rcy;&acy;&scy;&scy;&chcy;&icy;&tcy;&acy;&tcy;&softcy;
+        button.reset(name='reset', type='reset', disabled='')
+            span
+                | &Ocy;&chcy;&icy;&scy;&tcy;&icy;&tcy;&softcy; &pcy;&ocy;&lcy;&yacy; &icy; &rcy;&acy;&scy;&chcy;&iocy;&tcy;
