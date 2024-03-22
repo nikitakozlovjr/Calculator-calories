@@ -20,6 +20,10 @@ app.get('/balance', (req, res) => {
     res.render('sections/balance', data)
 })
 
+app.get('/protein', (req, res) => {
+    const data = {title: "Водяной баланс"};
+    res.render('sections/protein', data)
+})
 
 const port = 3000;
 app.listen(port, () => {
