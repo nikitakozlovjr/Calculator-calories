@@ -11,9 +11,15 @@ app.get('/', (req, res) => {
 })
 
 app.get('/calories', (req, res) => {
-    const data = {title: "Главная"};
+    const data = {title: "Твои калории"};
     res.render('sections/calories', data)
 })
+
+app.get('/balance', (req, res) => {
+    const data = {title: "Водяной баланс"};
+    res.render('sections/balance', data)
+})
+
 
 const port = 3000;
 app.listen(port, () => {
