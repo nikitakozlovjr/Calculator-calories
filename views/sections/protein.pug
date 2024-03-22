@@ -1,0 +1,34 @@
+extends ../layout/app.pug
+
+block content 
+    article
+        h1 Счетчик белка
+        form.formParam(name='counter', action='#', method='post')
+            fieldset
+                legend Физические параметры
+                div
+                    label Вес
+                    span кг
+                div
+                    input(name='weight', type='text', placeholder='0')
+            fieldset
+                legend Физичесская активность
+                ul
+                    li
+                        div
+                            input.active(name='active', type='radio', data-active='min', checked='checked')
+                            label Минимальная 
+                            p Сидячая работа и нет физических нагрузок
+                    li
+                        div
+                            input(name='active', type='radio', data-active='middle', checked='checked')
+                            label Средняя
+                            p Умеренная активность 2-3 раза в неделю
+                    li
+                        div
+                            input(name='active', type='radio', data-active='average')
+                            label Высокая
+                            p Интенсивные тренировки или физический труд
+        button.submit(name='submit', type='submit', disabled='') Рассчитать
+        button.reset(name='reset', type='reset', disabled='')
+            span Очистить поля и расчет
